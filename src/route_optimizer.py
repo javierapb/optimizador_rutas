@@ -95,7 +95,7 @@ class RouteOptimizer:
             node = list(self.graph.nodes())[idx]
             # Usar el grafo no proyectado para obtener lat/lon
             coordenadas.append({
-                "latitud": float(graph_unprojected.nodes[node]['y']),  # Convertir a float para asegurar serialización JSON
-                "longitud": float(graph_unprojected.nodes[node]['x'])
+                "latitude": float(graph_unprojected.nodes[node]['y']),  # Convertir a float para asegurar serialización JSON
+                "longitude": float(graph_unprojected.nodes[node]['x'])
             })
         return coordenadas 
