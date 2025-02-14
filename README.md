@@ -14,7 +14,7 @@ Sistema de optimización de rutas que utiliza OpenStreetMap (OSM) y Google OR-To
 1. **Clonar el Repositorio**
 ```bash
 git clone https://github.com/javierapb/optimizador_rutas.git
-cd optimizador-rutas-osm
+cd optimizador-rutas
 ```
 2. **Crear y activar entorno virtual**
 
