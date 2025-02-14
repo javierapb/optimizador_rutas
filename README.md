@@ -13,7 +13,7 @@ Sistema de optimización de rutas que utiliza OpenStreetMap (OSM) y Google OR-To
 
 1. **Clonar el Repositorio**
 bash
-git clone https://github.com/tu-usuario/optimizador-rutas-osm.git
+git clone https://github.com/javierapb/optimizador-rutas-osm.git
 cd optimizador-rutas-osm
 
 2. **Crear y activar entorno virtual**
@@ -41,7 +41,7 @@ El servidor estará disponible en http://localhost:8000
 
 ## Ejemplo de Uso (CURL)
 
-bash
+```
 curl -X POST "http://localhost:8000/optimizar-ruta" \
 -H "Content-Type: application/json" \
 -d '{
@@ -74,6 +74,7 @@ curl -X POST "http://localhost:8000/optimizar-ruta" \
 }
 ]
 }'
+```
 Proyecto
 El ejemplo muestra una ruta en Santiago de Chile desde Metro Universidad de Chile hasta Costanera Center, pasando por Parque Forestal y Plaza Italia.
 
