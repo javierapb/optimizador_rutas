@@ -12,67 +12,69 @@ Sistema de optimización de rutas que utiliza OpenStreetMap (OSM) y Google OR-To
 ### Pasos de Instalación
 
 1. **Clonar el Repositorio**
-bash
-git clone https://github.com/javierapb/optimizador-rutas-osm.git
+```bash
+git clone https://github.com/javierapb/optimizador_rutas.git
 cd optimizador-rutas-osm
-
+```
 2. **Crear y activar entorno virtual**
-bash
 
-Crear entorno virtual
+```bash
+
+#Crear entorno virtual
 python -m venv venv
 
-Activar entorno virtual
-En Mac/Linux:
+#Activar entorno virtual
+#En Mac/Linux:
 source venv/bin/activate
-En Windows:
+#En Windows:
 venv\Scripts\activate
-
+```
 3. **Instalar Dependencias**
-bash
-pip install -r requirements.txt
+```bash
 
+pip install -r requirements.txt
+```
 
 4. **Iniciar el Servidor**
-bbash
+```bash
 uvicorn src.main:app --reload
-
+```
 El servidor estará disponible en http://localhost:8000
 
 ## Ejemplo de Uso (CURL)
 
 ```
-curl -X POST "http://localhost:8000/optimizar-ruta" \
--H "Content-Type: application/json" \
--d '{
-"origin": {
-"latitude": -33.440364,
-"longitude": -70.650927
-},
-"destination": {
-"latitude": -33.422890,
-"longitude": -70.607166
-},
-"puntos": [
-{
-"latitude": -33.437277,
-"longitude": -70.634504,
-"hora_recogida": "2024-03-20T09:15:00",
-"ventana_tiempo": {
-"hora_inicio": "2024-03-20T09:00:00",
-"hora_termino": "2024-03-20T09:30:00"
-}
-},
-{
-"latitude": -33.432562,
-"longitude": -70.623518,
-"hora_recogida": "2024-03-20T09:30:00",
-"ventana_tiempo": {
-"hora_inicio": "2024-03-20T09:15:00",
-"hora_termino": "2024-03-20T09:45:00"
-}
-}
-]
+curl --location 'http://localhost:8000/optimizar-ruta' \
+--header 'Content-Type: application/json' \
+--data '{
+    "origin": {
+        "latitude": -33.440364,
+        "longitude": -70.650927
+    },
+    "destination": {
+        "latitude": -33.422890,
+        "longitude": -70.607166
+    },
+    "puntos": [
+        {
+            "latitude": -33.437277,
+            "longitude": -70.634504,
+            "hora_recogida": "2024-03-20T09:15:00",
+            "ventana_tiempo": {
+                "hora_inicio": "2024-03-20T09:00:00",
+                "hora_termino": "2024-03-20T09:30:00"
+            }
+        },
+        {
+            "latitude": -33.432562,
+            "longitude": -70.623518,
+            "hora_recogida": "2024-03-20T09:30:00",
+            "ventana_tiempo": {
+                "hora_inicio": "2024-03-20T09:15:00",
+                "hora_termino": "2024-03-20T09:45:00"
+            }
+        }
+    ]
 }'
 ```
 Proyecto
